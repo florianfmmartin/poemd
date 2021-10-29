@@ -89,7 +89,7 @@ const run_poem = (poem) => {
         }
     }
 
-    const text = poem.__tokens__.join(" ").replace(/\n /g, "\n")
+    const text = poem.__tokens__.join(" ").replace(/\n /g, "\n\n")
 
     return text
 }

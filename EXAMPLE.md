@@ -1,7 +1,9 @@
 # This is a test poem
 
 Roses are red
+
 Violets are blue
+
 There is x "are" in this poem
 
 ```js
@@ -32,11 +34,23 @@ poem.x = ({tokens, position, state}) => {
     }
 }
 
-```
+poem["\"are\""] = ({tokens, position, state}) => {
+    let new_tokens = tokens
+    new_tokens[position] = "are"
 
+    return {
+        tokens: new_tokens,
+        position: position + 1,
+        state
+    }
+}
+
+```
 
 ---
 
 Roses are red 
+
 Violets are blue 
-There is 2 "are" in this poem
+
+There is 2 are in this poem
